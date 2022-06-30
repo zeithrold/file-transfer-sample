@@ -32,8 +32,8 @@ const useStyles = createUseStyles({
 export default function FileUploadBox() {
   const styles = useStyles();
   return (
-    <button className={styles.boxRoot}>
+    <div className={styles.boxRoot}>
       <span className={styles.boxText}>Upload your file</span>
-    </button>
+    </div>
   );
 }
