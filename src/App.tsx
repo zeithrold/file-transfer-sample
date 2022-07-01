@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import CloudCommonHeader from './components/CloudCommonHeader';
-import NavigationBar from './components/NavigationBar';
 import ZeithroldProvider from './helpers/ZeithroldProvider';
 import AccountDetailPage from './pages/AccountDetailPage';
 import DefaultPage from './pages/DefaultPage';
+import FileUploadPage from './pages/FileUploadPage';
 import HomePage from './pages/HomePage';
 
 export default function App() {
@@ -15,6 +14,7 @@ export default function App() {
           <Route path="/" element={<DefaultPage />}>
             <Route index element={<HomePage />} />
             <Route path="account" element={<AccountDetailPage />} />
+            <Route path="upload" element={<FileUploadPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

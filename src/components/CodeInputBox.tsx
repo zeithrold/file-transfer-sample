@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = createUseStyles({
   boxInput: {
@@ -9,7 +10,7 @@ const useStyles = createUseStyles({
     marginTop: '12px',
     marginBottom: '12px',
     // marginBottom: '12px',
-    fontSize: '1.25em',
+    fontSize: '1.5em',
     padding: '10px',
     textAlign: 'center',
     fontWeight: 'bold',
@@ -33,6 +34,7 @@ export default function CodeInputBox() {
   const [code, setCode] = React.useState('');
   const [filePath, setFilePath] = React.useState('');
   const fileRef = React.createRef<HTMLInputElement>();
+  const navigate = useNavigate();
   return (
     <>
       <input
@@ -67,7 +69,8 @@ export default function CodeInputBox() {
         hidden
         ref={fileRef}
         onChange={(e) => {
-          setFilePath(e.target.value)
+          setFilePath(e.target.value);
+          navigate(`/upload`);
         }}/>
     </>
   );
