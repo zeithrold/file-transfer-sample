@@ -32,7 +32,7 @@ const useStyles = createUseStyles({
   },
   homeCardText: {
     alignSelf: 'center',
-    marginTop: '6px',
+    marginTop: '24px',
     marginBottom: '6px',
   },
   homeCardDataPointText: {
@@ -47,8 +47,8 @@ export default function HomeCard() {
   return (
     <div className={styles.homeCardRoot}>
       <span className={styles.homeCardTitle}>Transfer Your File, With <span className={styles.homeCardTitleGradient}>Ease</span></span>
-      <span className={styles.homeCardText}>Introducing a new way to transfer file, now with <b>File Transfer.</b></span>
-      <span className={styles.homeCardText}>Input the file code to download, or double-click to upload file.</span>
+      {/* <span className={styles.homeCardText}>Introducing a new way to transfer file, now with <b>File Transfer.</b></span> */}
+      <h4 className={styles.homeCardText}>Input the file code to download, or double-click to upload file.</h4>
       <CodeInputBox />
       <span className={styles.homeCardDataPointText}>Your Data Point: <b>3.14 DP / 5.0 DP</b></span>
     </div>
