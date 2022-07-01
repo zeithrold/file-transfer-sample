@@ -45,7 +45,7 @@ export default function NavigationBar() {
   return (
     <div className={styles.navBarRoot}>
       <Link className={styles.navBarTitleText} to='/'>File Transfer</Link>
-      <Link className={styles.navBarAccountText} to='/account'>Hi, Zeithrold!</Link>
+      <Link className={styles.navBarAccountText} to='/account'>Hi, <b>Zeithrold!</b></Link>
     </div>
   )
 }

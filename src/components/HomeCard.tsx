@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import CodeInputBox from './CodeInputBox';
-import FileUploadBox from './FileUploadBox';
+// import FileUploadBox from './FileUploadBox';
 // import HomeCardInteractArea from './HomeCardInteractArea';
 
 const useStyles = createUseStyles({
@@ -10,8 +10,10 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     justifySelf: 'center',
     flexDirection: 'column',
-    maxWidth: '960px',
+    maxWidth: '480px',
     padding: '24px',
+    marginTop: '24px',
+    marginBottom: '24px',
     border: 'solid',
     borderWidth: '1px',
     borderColor: '#e6e6e6',
@@ -30,6 +32,14 @@ const useStyles = createUseStyles({
   },
   homeCardText: {
     alignSelf: 'center',
+    marginTop: '6px',
+    marginBottom: '6px',
+  },
+  homeCardDataPointText: {
+    marginTop: '8px',
+    fontSize: '0.8em',
+    color: 'gray',
+    alignSelf: 'center',
   }
 });
 export default function HomeCard() {
@@ -37,11 +47,10 @@ export default function HomeCard() {
   return (
     <div className={styles.homeCardRoot}>
       <span className={styles.homeCardTitle}>Transfer Your File, With <span className={styles.homeCardTitleGradient}>Ease</span></span>
-      <p className={styles.homeCardText}>Introducing a new way to transfer file, now with File Transfer.</p>
-      <h3 className={styles.homeCardText}>Want to get file?</h3>
+      <span className={styles.homeCardText}>Introducing a new way to transfer file, now with <b>File Transfer.</b></span>
+      <span className={styles.homeCardText}>Input the file code to download, or double-click to upload file.</span>
       <CodeInputBox />
-      <h3 className={styles.homeCardText}>Want to upload file?</h3>
-      <FileUploadBox />
+      <span className={styles.homeCardDataPointText}>Your Data Point: <b>3.14 DP / 5.0 DP</b></span>
     </div>
   );
 }

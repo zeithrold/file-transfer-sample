@@ -2,11 +2,12 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-  boxRoot: {
+  boxInput: {
     // display: 'flex',
     // justifyContent: 'center',
     // alignItems: 'center',
-    // marginTop: '12px',
+    marginTop: '12px',
+    marginBottom: '12px',
     // marginBottom: '12px',
     fontSize: '1.25em',
     padding: '10px',
@@ -14,19 +15,60 @@ const useStyles = createUseStyles({
     fontWeight: 'bold',
     borderRadius: '8px',
     borderColor: 'black',
-    borderWidth: '3px'
+    borderWidth: '3px',
+  },
+  boxText: {
+    // marginTop: '12px',
+    fontWeight: 'bold',
+    alignSelf: 'center'
+  },
+  boxClick: {
+    textDecorationLine: 'underline',
+    color: 'black'
   }
 });
 
 export default function CodeInputBox() {
   const styles = useStyles();
   const [code, setCode] = React.useState('');
+  const [filePath, setFilePath] = React.useState('');
+  const fileRef = React.createRef<HTMLInputElement>();
   return (
-    <input placeholder="Input File Code..." className={styles.boxRoot} onChange={
-      (e) => {
-        setCode(e.target.value);
-      }
-    }>
-    </input>
+    <>
+      <input
+        placeholder="input or double-click"
+        className={styles.boxInput}
+        onChange={
+        (e) => {
+          setCode(e.target.value);
+        }}
+        onDoubleClick={() => {
+          if (fileRef.current) {
+            fileRef.current.click();
+          } else {
+            console.error('fileRef is null');
+          }
+        }}
+      >
+      </input>
+      <span className={styles.boxText}>
+        Or you can upload file by <a
+          href='#'
+          className={styles.boxClick}
+          onClick={() => {
+            fileRef.current ? fileRef.current.click() : console.error('fileRef is null')
+          }}>
+            click here
+          </a>
+          .
+        </span>
+      <input
+        type="file"
+        hidden
+        ref={fileRef}
+        onChange={(e) => {
+          setFilePath(e.target.value)
+        }}/>
+    </>
   );
 }
