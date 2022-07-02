@@ -115,7 +115,7 @@ export default function FileUploadCard() {
                 margin: '16px 0',
               }}
             >
-              <span className={styles.cardUploadSuccessTitle}>Sucessfully uploaded your file!</span>
+              <span className={styles.cardUploadSuccessTitle}>Successfully uploaded your file!</span>
               <span className={styles.cardUploadSuccessDescription}>Your File Code is: </span>
               <input
                 value='176-0005'
